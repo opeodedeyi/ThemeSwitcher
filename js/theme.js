@@ -1,3 +1,4 @@
+// DARK MODE SCRIPT
 const themeMap = {
     dark: "light",
     light: "dark"
@@ -17,6 +18,9 @@ function toggleTheme() {
     bodyClass.replace(current, next);
     localStorage.setItem('theme', next);
 }
-  
-themeButton = document.querySelectorAll('.themeButton')
-themeButton.onclick = toggleTheme;
+
+themeButton = Array.from(document.querySelectorAll('.themeButton'))[0];
+
+themeButton.addEventListener('click', function() {
+    toggleTheme();
+})
