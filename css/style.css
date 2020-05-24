@@ -114,6 +114,106 @@ main {
         display: none;
         margin-left: 1rem;
     }
+
+    /* overlay for mobile */
+    .mm {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transition: 100ms ease-in-out;
+        z-index: 30;
+        width: 100%;
+        max-width: 320px;
+        height: 100%;
+        max-height: 480px;
+    }
+
+    .mm.active {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    .mm-h {
+        height: 5rem;
+        padding: 0 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--color-main);
+        color: var(--text-secondary);
+    }
+
+    .mm-h-title {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        margin-left: 0.5rem;
+        font-weight: 700;
+    }
+
+    .mm-h-close svg {
+        width: 1.25rem;
+        margin: 0.5rem 1rem;
+        color: var(--text-secondary);
+    }
+
+    .mm-b {
+        min-height: 24.95rem;
+    }
+
+    .mm-b-nav {
+        list-style: none;
+        padding: 1.5rem;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 100%;
+    }
+
+    .mm-b-nav-item {
+        height: 3.5rem;
+        min-width: 17rem;
+    }
+    
+    .mm-b-nav-link {
+        color: var(--text-secondary);
+        text-decoration: none;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .mm-b-nav-link svg {
+        width: 1.25rem;
+        margin: 0 1.3rem 0 0;
+    }
+
+    .mm-b {
+        width: 100%;
+        background-color: var(--color-main-2);
+        color: var(--text-secondary);
+    }
+
+    .overlay {
+        position: fixed;
+        opacity: 0;
+        transition: 100ms ease-in-out;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 29;
+        background-color: rgba(var(--rgba-overlay), 0.9);
+        pointer-events: none;
+    }
+
+    .overlay.active {
+        opacity: 1;
+        pointer-events: all;
+    }
 }
 
 /* Large screens */
@@ -135,6 +235,7 @@ main {
         flex-direction: column;
     }
 
+    .mobile-menu,
     .mobile {
         display: none;
     }
@@ -174,6 +275,7 @@ main {
     --color-main: #ffffff;
     --color-main-2: #eeeeee;
     --color-nav-hover: #e5e5e5;
+    --rgba-overlay: 224, 224, 224;
 }
 
 .dark {
@@ -182,4 +284,5 @@ main {
     --color-main: #212121;
     --color-main-2: #181818;
     --color-nav-hover: #383838;
+    --rgba-overlay: 0, 0, 0;
 }
