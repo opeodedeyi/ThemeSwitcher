@@ -89,7 +89,6 @@ main {
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
-    /* desktop should have 15px to the left */
 }
 
 .head-link svg {
